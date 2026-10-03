@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#233b2b">
+<title>Brindille — Fleuriste libre, Paris 11e</title>
+<meta name="description" content="Brindille, atelier floral à Paris 11e. Bouquets de saison, fleurs françaises et compositions un peu sauvages. Livraison à vélo dans Paris.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{forest:'#233b2b',cream:'#f4f1e7',citron:'#e9ef94',lilac:'#d9cbe7'},fontFamily:{sans:['DM Sans','sans-serif'],display:['Italiana','serif']}}}}</script>
+</head>
+<body class="bg-cream text-forest antialiased">
+<div class="site-shell">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0}::selection{background:#d9cbe7;color:#233b2b}a,button,input,textarea,select{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible{outline:2px solid #8a5d9e;outline-offset:6px}input:focus,textarea:focus,select:focus{outline:2px solid #233b2b;outline-offset:3px}.display{font-family:'Italiana',serif;letter-spacing:-.055em;line-height:.91}.eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;font-weight:600}.pill{display:inline-flex;align-items:center;justify-content:center;gap:25px;padding:17px 25px;border:1px solid currentColor;border-radius:99px;font-size:12px;font-weight:600;transition:transform .4s cubic-bezier(.16,1,.3,1),background .3s,color .3s}.pill:hover{transform:translateY(-4px);background:#e9ef94;color:#233b2b}.image-wrap{overflow:hidden}.image-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}.image-wrap:hover img{transform:scale(1.06)}.link-line{position:relative}.link-line:after{content:"";position:absolute;bottom:-5px;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s}.link-line:hover:after{transform:scaleX(1)}.petal{border-radius:48% 48% 0 0}.star{display:inline-block;animation:spin 30s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@keyframes arrive{from{transform:translateY(70px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes photograph{from{clip-path:inset(100% 0 0 0);transform:scale(1.07)}to{clip-path:inset(0);transform:scale(1)}}@keyframes ticker{to{transform:translateX(-50%)}}.arrival{animation:arrive 1.2s cubic-bezier(.16,1,.3,1) both}.arrival-two{animation-delay:.15s}.arrival-three{animation-delay:.3s}.hero-picture{animation:photograph 1.6s cubic-bezier(.16,1,.3,1) both}.ticker{width:max-content;animation:ticker 34s linear infinite}.ticker:hover{animation-play-state:paused}.grain{background-image:url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=80");background-size:cover;background-position:center}.product-button{transition:background .3s,transform .3s}.product-button:hover{background:#e9ef94;transform:rotate(-8deg)}dialog{color:#233b2b;background:#f4f1e7;border:0;padding:0;border-radius:8px;max-width:calc(100% - 32px)}dialog::backdrop{background:#13271bb3;backdrop-filter:blur(6px)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}@media(max-width:767px){.eyebrow{font-size:9px}.pill{padding:15px 20px}}
+</style>
+
+<header class="relative z-30 border-b border-forest/15">
+<div class="bg-forest text-cream text-center text-[10px] tracking-[.08em] py-2.5 px-4">UN PEU DE SAUVAGE DANS VOTRE QUOTIDIEN. <span class="hidden sm:inline">— LIVRAISON À VÉLO DANS PARIS</span></div>
+<div class="max-w-[1600px] mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+<a href="#" aria-label="Brindille, accueil" class="font-display text-[37px] leading-none tracking-[-.06em]">brindille<span class="text-lg align-top ml-1">✳</span></a>
+<nav class="hidden md:flex gap-9 text-xs font-medium" aria-label="Navigation principale">
+<a class="link-line" href="#bouquets">Les bouquets</a><a class="link-line" href="#atelier">L’esprit Brindille</a><a class="link-line" href="#occasions">Vos grands jours</a><a class="link-line" href="#visite">Nous trouver</a>
+</nav>
+<div class="flex gap-5 items-center">
+<button type="button" onclick="document.getElementById('basket').showModal()" class="text-xs flex gap-2 items-center link-line" aria-label="Ouvrir le panier"><span class="hidden sm:inline">Votre panier</span><i class="fa-solid fa-bag-shopping text-sm"></i><span id="cart-count" class="text-[10px] rounded-full bg-citron w-5 h-5 inline-flex items-center justify-center">0</span></button>
+<button id="menu-toggle" class="md:hidden text-lg p-1" aria-label="Ouvrir le menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+</div>
+</div>
+<nav id="mobile-menu" hidden class="md:hidden px-6 pb-6 border-t border-forest/10" aria-label="Navigation mobile">
+<a href="#bouquets" class="block py-3">Les bouquets</a><a href="#atelier" class="block py-3">L’esprit Brindille</a><a href="#occasions" class="block py-3">Vos grands jours</a><a href="#visite" class="block py-3">Nous trouver</a>
+</nav>
+<script>
+const menuButton=document.getElementById('menu-toggle'),mobileMenu=document.getElementById('mobile-menu');menuButton.addEventListener('click',()=>{mobileMenu.hidden=!mobileMenu.hidden;menuButton.setAttribute('aria-expanded',String(!mobileMenu.hidden));menuButton.setAttribute('aria-label',mobileMenu.hidden?'Ouvrir le menu':'Fermer le menu')});mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.hidden=true;menuButton.setAttribute('aria-expanded','false')}));
+</script>
+</header>
+
+<main>
+<section class="relative max-w-[1600px] mx-auto px-6 md:px-12 pt-9 md:pt-12 pb-10 md:pb-16 overflow-hidden">
+<div class="flex justify-between eyebrow mb-8 md:mb-10 arrival"><span>Atelier floral · Paris, 11e</span><span>Libre par nature</span></div>
+<div class="grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-3 items-center relative">
+<div class="relative z-10">
+<h1 class="display text-[clamp(76px,10.7vw,168px)] arrival">Paris,<br>à fleur<br><span class="italic md:whitespace-nowrap">de peau.</span></h1>
+<div class="mt-8 md:mt-10 flex gap-5 max-w-[385px] arrival arrival-two"><span class="text-3xl text-forest/70">↗</span><p class="text-sm leading-relaxed">Des fleurs de saison, des tiges indociles.<br>Des bouquets qui ne ressemblent qu’à vous.<br>Et à personne d’autre.</p></div>
+<a href="#bouquets" class="pill bg-forest text-cream mt-7 arrival arrival-three">Trouver votre bouquet <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+<div class="relative md:pl-5 md:pr-5 mt-4 md:mt-0">
+<div class="hero-picture aspect-[4/5] md:aspect-[.88] petal overflow-hidden bg-lilac">
+<img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1100&q=80" alt="Bouquet généreux de fleurs roses et blanches, assemblé à la main" class="w-full h-full object-cover">
+</div>
+<div class="absolute -right-1 md:-right-5 top-[12%] bg-citron w-24 h-24 md:w-32 md:h-32 rounded-full flex flex-col justify-center items-center -rotate-12 shadow-lg shadow-forest/10 arrival arrival-three"><span class="text-2xl mb-1">✳</span><span class="eyebrow text-center leading-relaxed">Cueilli avec soin<br>aimé sans mesure</span></div>
+<div class="absolute bottom-5 left-9 right-9 flex justify-between text-white text-[10px] uppercase tracking-widest"><span>La beauté, au naturel.</span><span>01 / 03</span></div>
+</div>
+</div>
+<div class="mt-10 md:mt-8 flex justify-between text-[10px] text-forest/65"><span>Fleurs vivantes. Émotions durables.</span><a href="#manifeste" class="link-line flex items-center gap-3">Faire éclore la suite <i class="fa-solid fa-arrow-down"></i></a></div>
+</section>
+
+<div class="bg-citron border-y border-forest/20 overflow-hidden py-5" aria-hidden="true">
+<div class="ticker flex items-center gap-10 font-display text-3xl md:text-4xl">
+<span>Jamais tout à fait sages</span><span>✳</span><span>Toujours de saison</span><span>✳</span><span>Paris dans le cœur</span><span>✳</span><span>La nature en liberté</span><span>✳</span><span>Jamais tout à fait sages</span><span>✳</span><span>Toujours de saison</span><span>✳</span><span>Paris dans le cœur</span><span>✳</span><span>La nature en liberté</span><span>✳</span>
+</div>
+</div>
+
+<section id="manifeste" class="px-6 md:px-12 py-20 md:py-32 max-w-[1600px] mx-auto">
+<style>@media (prefers-reduced-motion: no-preference) { @supports (animation-timeline: view()) { .reveal { animation: reveal both cubic-bezier(0.16, 1, 0.3, 1); animation-timeline: view(); animation-range: entry 0% entry 90%; } } } @keyframes reveal { from { opacity: 0; transform: translateY(3rem) scale(0.98); } to { opacity: 1; transform: none; } }</style>
+<div class="grid md:grid-cols-[1fr_3fr] gap-10">
+<div class="eyebrow reveal flex items-start gap-3"><span class="pt-1">01 — Notre conviction</span><span class="text-xl leading-none">✳</span></div>
+<div>
+<h2 class="display text-[clamp(39px,5.4vw,82px)] reveal leading-[1.07]">La nature ne pousse<br>pas en lignes droites.<br><span class="text-[#8b9676]">Nos bouquets non plus.</span></h2>
+<div class="grid sm:grid-cols-2 gap-8 mt-10 max-w-[730px]">
+<p class="text-sm leading-7 reveal">On aime les tiges qui dépassent, les couleurs qui se répondent et les fleurs qui ont quelque chose à raconter. Chez Brindille, chaque bouquet est un petit paysage. Vivant, spontané, singulier.</p>
+<p class="text-sm leading-7 reveal">Nous suivons les saisons, pas les tendances. Nous composons à la main, dans notre atelier du 11e, avec des fleurs françaises dès que la nature nous le permet. Rien de figé. Tout de sensible.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="bouquets" class="bg-[#e9e6dc] px-6 md:px-12 py-16 md:py-24">
+<div class="max-w-[1504px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div><p class="eyebrow mb-5 reveal">02 — Les bouquets du moment</p><h2 class="display text-[clamp(52px,7vw,100px)] reveal">Un peu, beaucoup,<br><span class="italic">passionnément.</span></h2></div>
+<p class="text-xs leading-6 max-w-[255px] reveal">La palette change avec les arrivages.<br>Le caractère, lui, reste le même.<br>Chaque bouquet est une pièce unique.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 md:gap-6">
+<article class="reveal">
+<div class="image-wrap aspect-[4/5] relative bg-[#d6d3c3]"><img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80" alt="Bouquet romantique de fleurs aux teintes douces" loading="lazy"><span class="absolute top-4 left-4 bg-cream rounded-full px-4 py-2 text-[9px] uppercase tracking-wider">Le petit geste</span><button class="product-button absolute bottom-5 right-5 bg-cream w-12 h-12 rounded-full text-lg" aria-label="Ajouter Le Flâneur à votre panier" onclick="addBouquet('Le Flâneur',35)"><i class="fa-solid fa-plus"></i></button></div>
+<div class="flex justify-between items-baseline mt-5"><h3 class="font-display text-3xl tracking-tight">Le Flâneur</h3><span class="text-sm">35 €</span></div><p class="text-xs text-forest/65 mt-2 leading-6">Petit format, grande tendresse. Pour un merci,<br class="hidden lg:block"> un sourire, ou simplement pour soi.</p>
+</article>
+<article class="reveal md:mt-12">
+<div class="image-wrap aspect-[4/5] relative bg-lilac"><img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80" alt="Bouquet de roses et fleurs de saison roses, crème et blanches" loading="lazy"><span class="absolute top-4 left-4 bg-citron rounded-full px-4 py-2 text-[9px] uppercase tracking-wider">Le préféré de l’atelier</span><button class="product-button absolute bottom-5 right-5 bg-cream w-12 h-12 rounded-full text-lg" aria-label="Ajouter L'Indocile à votre panier" onclick="addBouquet('L’Indocile',55)"><i class="fa-solid fa-plus"></i></button></div>
+<div class="flex justify-between items-baseline mt-5"><h3 class="font-display text-3xl tracking-tight">L’Indocile</h3><span class="text-sm">55 €</span></div><p class="text-xs text-forest/65 mt-2 leading-6">Notre signature : du mouvement, du volume<br class="hidden lg:block"> et ce joli je-ne-sais-quoi.</p>
+</article>
+<article class="reveal">
+<div class="image-wrap aspect-[4/5] relative bg-[#d0d5c5]"><img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=800&q=80" alt="Fleurs roses délicates et feuillage vert composant une palette naturelle" loading="lazy"><span class="absolute top-4 left-4 bg-cream rounded-full px-4 py-2 text-[9px] uppercase tracking-wider">Le grand frisson</span><button class="product-button absolute bottom-5 right-5 bg-cream w-12 h-12 rounded-full text-lg" aria-label="Ajouter La Folie Douce à votre panier" onclick="addBouquet('La Folie Douce',85)"><i class="fa-solid fa-plus"></i></button></div>
+<div class="flex justify-between items-baseline mt-5"><h3 class="font-display text-3xl tracking-tight">La Folie Douce</h3><span class="text-sm">85 €</span></div><p class="text-xs text-forest/65 mt-2 leading-6">Une brassée généreuse, presque déraisonnable.<br class="hidden lg:block"> Parce que certaines émotions débordent.</p>
+</article>
+</div>
+<div class="border-t border-forest/20 mt-12 pt-5 flex flex-col sm:flex-row justify-between gap-3 text-[10px]"><span><i class="fa-solid fa-bicycle mr-2"></i> Livraison à vélo dans Paris : 9 € · Offerte dès 80 €</span><span><i class="fa-solid fa-scissors mr-2"></i> Composé le jour même · Retrait gratuit à l’atelier</span></div>
+</div>
+<dialog id="basket" class="w-[520px]">
+<div class="p-7 md:p-10">
+<div class="flex justify-between items-center mb-7"><h2 class="font-display text-4xl">Votre petite récolte.</h2><button onclick="document.getElementById('basket').close()" aria-label="Fermer le panier" class="p-2"><i class="fa-solid fa-xmark"></i></button></div>
+<div id="cart-items" class="space-y-4 text-sm"><p>Votre panier attend ses premières fleurs.</p></div>
+<div id="cart-summary" class="hidden border-t border-forest/20 mt-7 pt-5">
+<div class="flex justify-between text-sm mb-5"><span>Total des bouquets</span><strong id="cart-total"></strong></div>
+<p class="text-xs leading-6 mb-5">Nous confirmons ensemble les fleurs disponibles, le retrait ou la livraison. Aucun paiement n’est demandé ici.</p>
+<a id="order-link" href="mailto:bonjour@brindille-paris.fr" class="pill bg-forest text-cream w-full">Demander ma réservation <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+</dialog>
+<div id="cart-toast" role="status" class="fixed z-50 bottom-6 left-1/2 -translate-x-1/2 bg-forest text-cream px-6 py-4 rounded-full text-xs shadow-xl hidden whitespace-nowrap">Une jolie tige de plus dans votre panier.</div>
+<script>
+let cart=[],toastTimer;function addBouquet(name,price){const item=cart.find(i=>i.name===name);if(item)item.qty++;else cart.push({name,price,qty:1});renderCart();const toast=document.getElementById('cart-toast');toast.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.add('hidden'),2600)}
+function removeBouquet(index){cart[index].qty--;if(cart[index].qty===0)cart.splice(index,1);renderCart()}
+function renderCart(){document.getElementById('cart-count').textContent=cart.reduce((sum,i)=>sum+i.qty,0);document.getElementById('cart-items').innerHTML=cart.length?cart.map((i,n)=>'<div class="flex justify-between items-center gap-3 py-3 border-b border-forest/10"><div><strong>'+i.name+'</strong><p class="text-xs mt-1">'+i.qty+' × '+i.price+' €</p></div><button onclick="removeBouquet('+n+')" class="text-xs underline p-2" aria-label="Retirer un bouquet '+i.name+'">Retirer</button></div>').join(''):'<p>Votre panier attend ses premières fleurs.</p>';document.getElementById('cart-summary').classList.toggle('hidden',!cart.length);document.getElementById('cart-total').textContent=cart.reduce((sum,i)=>sum+i.qty*i.price,0)+' €';document.getElementById('order-link').href='mailto:bonjour@brindille-paris.fr?subject='+encodeURIComponent('Ma réservation Brindille')+'&body='+encodeURIComponent('Bonjour Brindille,\nJe souhaite réserver :\n'+cart.map(i=>i.qty+' × '+i.name+' — '+i.qty*i.price+' €').join('\n')+'\n\nDate souhaitée :\nRetrait ou livraison :\nMon numéro de téléphone :\nMon petit mot :')}
+</script>
+</section>
+
+<section id="atelier" class="bg-forest text-cream relative overflow-hidden">
+<div class="max-w-[1600px] mx-auto grid md:grid-cols-2">
+<div class="image-wrap min-h-[430px] md:min-h-[760px] relative reveal">
+<img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=1200&q=80" alt="Fleurs aux couleurs lumineuses dans la lumière de l’atelier" loading="lazy" class="absolute inset-0">
+<div class="absolute bottom-7 left-7 bg-cream text-forest px-5 py-4 -rotate-3 text-xs shadow-xl"><span class="font-display text-2xl block mb-1">Le beau n’est jamais parfait.</span>C’est pour ça qu’on l’aime.</div>
+</div>
+<div class="px-6 md:px-14 lg:px-20 py-16 md:py-24 flex flex-col justify-center">
+<p class="eyebrow text-citron mb-8 reveal">03 — Un atelier, pas une usine</p>
+<h2 class="display text-[clamp(54px,5.8vw,88px)] reveal">Des mains.<br>Du cœur.<br><span class="italic text-citron">Et de la terre.</span></h2>
+<p class="text-sm text-cream/75 leading-7 max-w-md mt-9 reveal">Derrière Brindille, il y a Camille et Jeanne. Deux amies, une même envie : remettre du vivant dans la ville. Notre atelier est un joyeux désordre de seaux, de feuillages et de conversations qui durent.</p>
+<p class="text-sm text-cream/75 leading-7 max-w-md mt-4 reveal">On connaît nos producteurs. On prend le temps de choisir chaque tige. Et l’on pense que la plus belle fleur est celle qui pousse au bon moment.</p>
+<a href="#visite" class="link-line self-start text-xs mt-8 reveal">Entrez, on vous offre un café <i class="fa-solid fa-arrow-up-right-from-square ml-4"></i></a>
+</div>
+</div>
+</section>
+
+<section class="px-6 md:px-12 py-16 md:py-24 max-w-[1600px] mx-auto">
+<div class="grid md:grid-cols-3 gap-10 md:gap-14">
+<article class="reveal border-t border-forest/30 pt-6"><div class="flex justify-between items-center mb-7"><span class="eyebrow">01 / Le rythme juste</span><i class="fa-solid fa-sun text-xl"></i></div><h3 class="font-display text-3xl mb-4">À chaque saison,<br>sa poésie.</h3><p class="text-xs leading-6 text-forest/75">Des renoncules au printemps, des dahlias à l’automne. Pas de fleurs à contretemps : nos compositions suivent le calendrier de la nature.</p></article>
+<article class="reveal border-t border-forest/30 pt-6"><div class="flex justify-between items-center mb-7"><span class="eyebrow">02 / Les pieds sur terre</span><i class="fa-solid fa-seedling text-xl"></i></div><h3 class="font-display text-3xl mb-4">Tout près,<br>c’est encore mieux.</h3><p class="text-xs leading-6 text-forest/75">Nous privilégions les producteurs français et les circuits courts. Du papier recyclable, pas de mousse florale : moins de superflu, plus de sens.</p></article>
+<article class="reveal border-t border-forest/30 pt-6"><div class="flex justify-between items-center mb-7"><span class="eyebrow">03 / Doucement, Paris</span><i class="fa-solid fa-bicycle text-xl"></i></div><h3 class="font-display text-3xl mb-4">De notre atelier<br>à votre porte.</h3><p class="text-xs leading-6 text-forest/75">Nos bouquets traversent Paris à vélo, bien protégés et avec leur petit mot. Livraison du mardi au samedi, sur un créneau convenu ensemble.</p></article>
+</div>
+</section>
+
+<section id="occasions" class="bg-lilac overflow-hidden px-6 md:px-12 py-16 md:py-24">
+<div class="max-w-[1504px] mx-auto">
+<div class="flex justify-between items-start gap-5 mb-12"><div><p class="eyebrow mb-6 reveal">04 — Les moments qui restent</p><h2 class="display text-[clamp(54px,8vw,120px)] reveal">Fleurir les jours.<br><span class="italic">Tous les jours.</span></h2></div><span class="star text-[100px] leading-none hidden md:block">✳</span></div>
+<div class="grid md:grid-cols-[1.1fr_.9fr] gap-8 md:gap-16 items-center">
+<div class="image-wrap aspect-[4/3] md:aspect-[5/4] rounded-t-[180px] reveal"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1100&q=80" alt="Table de réception décorée de compositions florales et de bougies" loading="lazy"></div>
+<div>
+<article class="py-6 border-t border-forest/30 reveal"><div class="flex gap-4"><span class="text-[10px] pt-2">01</span><div><h3 class="font-display text-3xl md:text-4xl mb-3">Les grands oui.</h3><p class="text-xs leading-6 max-w-sm">Un mariage à votre image, pas à celle d’un catalogue. Du bouquet de mariée à la dernière fleur sur la table, nous dessinons votre histoire.</p></div></div></article>
+<article class="py-6 border-t border-forest/30 reveal"><div class="flex gap-4"><span class="text-[10px] pt-2">02</span><div><h3 class="font-display text-3xl md:text-4xl mb-3">Les lieux qui vivent.</h3><p class="text-xs leading-6 max-w-sm">Restaurants, bureaux, jolies adresses : une présence florale qui change chaque semaine. Nous imaginons votre abonnement sur mesure.</p></div></div></article>
+<article class="py-6 border-t border-forest/30 reveal"><div class="flex gap-4"><span class="text-[10px] pt-2">03</span><div><h3 class="font-display text-3xl md:text-4xl mb-3">Les mains dans les fleurs.</h3><p class="text-xs leading-6 max-w-sm">Un samedi à l’atelier, six personnes, une brassée de saison. Apprenez à composer votre bouquet et repartez avec un petit bout de fierté. À partir de 65 €.</p></div></div></article>
+<a href="#contact" class="pill mt-5 bg-forest text-cream reveal">Racontez-nous votre envie <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="relative grain min-h-[490px] md:min-h-[650px] flex items-center justify-center px-6 py-20 text-white text-center">
+<div class="absolute inset-0 bg-forest/55"></div>
+<div class="relative max-w-4xl">
+<p class="eyebrow mb-10 reveal">Les mots doux de nos clients</p>
+<blockquote class="display text-[clamp(37px,5.2vw,74px)] leading-[1.09] reveal">« On dirait un jardin<br>qu’on aurait ramené<br><span class="italic">dans son appartement. »</span></blockquote>
+<div class="mt-9 reveal"><div class="text-citron text-xs tracking-[.3em] mb-4" aria-label="5 étoiles">★★★★★</div><p class="text-xs">Louise M. — Une habituée du samedi</p></div>
+</div>
+</section>
+
+<section id="visite" class="max-w-[1600px] mx-auto px-6 md:px-12 py-20 md:py-28">
+<div class="grid md:grid-cols-[1fr_1.1fr] gap-12 md:gap-24 items-center">
+<div>
+<p class="eyebrow mb-7 reveal">05 — Votre coin de nature à Paris</p>
+<h2 class="display text-[clamp(56px,6.7vw,100px)] reveal">Au coin<br>de la rue,<br><span class="italic">un jardin.</span></h2>
+<p class="text-sm leading-7 mt-8 max-w-[350px] reveal">Passez pour un bouquet. Restez pour l’odeur des fleurs, le conseil de Jeanne et ce rayon de soleil qui traverse l’atelier à quinze heures.</p>
+<div class="grid grid-cols-2 gap-6 mt-9 reveal">
+<div><h3 class="eyebrow mb-4">L’atelier</h3><p class="text-xs leading-6">24, rue de la Folie-Méricourt<br>75011 Paris<br>Métro Saint-Ambroise</p></div>
+<div><h3 class="eyebrow mb-4">Les portes ouvertes</h3><p class="text-xs leading-6">Mardi — samedi : 10h — 19h30<br>Dimanche : 10h — 13h<br>Lundi : on prend racine.</p></div>
+</div>
+<a href="https://www.google.com/maps/search/?api=1&query=24+rue+de+la+Folie-Mericourt+75011+Paris" target="_blank" rel="noopener noreferrer" class="pill mt-9 reveal">Le chemin jusqu’à nous <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+</div>
+<div class="relative reveal">
+<div class="image-wrap aspect-[4/5]"><img src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=1000&q=80" alt="Fleurs fraîches et végétation luxuriante dans un atelier floral" loading="lazy"></div>
+<div class="absolute -bottom-5 -left-3 md:-left-8 rounded-full w-32 h-32 md:w-40 md:h-40 bg-citron flex flex-col justify-center items-center -rotate-12"><i class="fa-solid fa-heart text-xl mb-3"></i><span class="font-display text-xl md:text-2xl">Bonjour, voisin.</span><span class="eyebrow mt-2">Paris 11e</span></div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="bg-citron px-6 md:px-12 py-16 md:py-24">
+<div class="max-w-[1504px] mx-auto grid md:grid-cols-2 gap-12 md:gap-24">
+<div><p class="eyebrow mb-6 reveal">06 — Tout commence par un mot</p><h2 class="display text-[clamp(52px,6.5vw,92px)] reveal">Une idée<br>qui <span class="italic">bourgeonne ?</span></h2><p class="mt-8 text-sm leading-7 max-w-sm reveal">Un événement, une envie particulière, une question toute simple. Écrivez-nous : nous vous répondons sous deux jours ouvrés, entre deux bouquets.</p><a href="mailto:bonjour@brindille-paris.fr" class="text-sm link-line inline-block mt-8">bonjour@brindille-paris.fr ↗</a></div>
+<form id="contact-form" class="self-center reveal">
+<div class="grid sm:grid-cols-2 gap-6 mb-6"><label class="text-xs">Votre prénom<input required name="prenom" autocomplete="given-name" class="block w-full bg-transparent border-b border-forest/40 py-3 rounded-none mt-1 text-sm" placeholder="Camille"></label><label class="text-xs">Votre adresse e-mail<input required type="email" name="email" autocomplete="email" class="block w-full bg-transparent border-b border-forest/40 py-3 rounded-none mt-1 text-sm" placeholder="vous@exemple.fr"></label></div>
+<label class="text-xs block mb-6">Ce qui vous amène<select name="sujet" class="block w-full bg-transparent border-b border-forest/40 py-3 rounded-none mt-1 text-sm"><option>Un bouquet sur mesure</option><option>Un mariage ou un événement</option><option>Un abonnement floral</option><option>Un atelier entre amis</option><option>Juste une petite question</option></select></label>
+<label class="text-xs block">Racontez-nous<textarea required name="message" rows="3" class="block w-full bg-transparent border-b border-forest/40 py-3 rounded-none mt-1 text-sm resize-y" placeholder="La date, le lieu, les couleurs dont vous rêvez…"></textarea></label>
+<div class="flex flex-wrap items-center gap-5 mt-7"><button type="submit" class="pill bg-forest text-cream">Faire éclore la conversation <i class="fa-solid fa-arrow-right"></i></button><span class="text-[10px] max-w-[180px] leading-5">Votre messagerie s’ouvrira avec votre message prêt à envoyer.</span></div>
+<p id="form-status" role="status" class="text-xs mt-5"></p>
+<script>
+document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();const f=new FormData(this);const body='Bonjour Brindille,\n\n'+f.get('message')+'\n\n'+f.get('prenom')+'\n'+f.get('email');window.location.href='mailto:bonjour@brindille-paris.fr?subject='+encodeURIComponent(f.get('sujet'))+'&body='+encodeURIComponent(body);document.getElementById('form-status').textContent='Votre message est prêt dans votre messagerie. Si elle ne s’ouvre pas, écrivez-nous directement à bonjour@brindille-paris.fr.'});
+</script>
+</form>
+</div>
+</section>
+
+<section class="px-6 md:px-12 py-16 max-w-[1600px] mx-auto">
+<div class="grid md:grid-cols-[1fr_2fr] gap-8">
+<div><p class="eyebrow mb-5 reveal">Les petites questions</p><h2 class="font-display text-4xl reveal">Avant de cueillir.</h2></div>
+<div class="reveal">
+<details class="border-t border-forest/25 py-5 group"><summary class="text-sm cursor-pointer flex justify-between items-center list-none gap-6">Mon bouquet sera-t-il exactement comme sur la photo ?<span class="text-xl group-open:rotate-45 transition-transform">+</span></summary><p class="text-xs leading-6 text-forest/70 mt-4 max-w-xl">Pas tout à fait, et c’est ce qui fait sa beauté. La photo donne l’esprit et le volume. Les variétés évoluent selon la saison et les arrivages. Si une couleur vous tient à cœur, dites-le-nous au moment de réserver.</p></details>
+<details class="border-t border-forest/25 py-5 group"><summary class="text-sm cursor-pointer flex justify-between items-center list-none gap-6">Comment garder mes fleurs belles plus longtemps ?<span class="text-xl group-open:rotate-45 transition-transform">+</span></summary><p class="text-xs leading-6 text-forest/70 mt-4 max-w-xl">Un vase propre, de l’eau fraîche tous les deux jours et des tiges recoupées d’un centimètre en biais. Éloignez votre bouquet du chauffage, du soleil direct et des fruits. On glisse aussi nos conseils dans chaque commande.</p></details>
+<details class="border-y border-forest/25 py-5 group"><summary class="text-sm cursor-pointer flex justify-between items-center list-none gap-6">Peut-on ajouter un mot et choisir sa date ?<span class="text-xl group-open:rotate-45 transition-transform">+</span></summary><p class="text-xs leading-6 text-forest/70 mt-4 max-w-xl">Bien sûr. Votre mot est écrit à la main, sans supplément. Précisez la date souhaitée dans votre demande de réservation : nous confirmerons ensemble le créneau et la disponibilité avant tout règlement.</p></details>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-forest text-cream px-6 md:px-12 pt-14 pb-6 overflow-hidden">
+<div class="max-w-[1504px] mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-cream/20 pb-12">
+<div class="col-span-2 md:col-span-1"><p class="font-display text-3xl mb-3">Fleuriste libre.</p><p class="text-xs text-cream/60 leading-6">Pour les jours ordinaires.<br>Et les autres, surtout.</p></div>
+<div><h3 class="eyebrow text-citron mb-5">Cueillir</h3><div class="space-y-3 text-xs"><a href="#bouquets" class="block link-line w-fit">Nos bouquets</a><a href="#occasions" class="block link-line w-fit">Mariages & événements</a><a href="#contact" class="block link-line w-fit">Ateliers & abonnements</a></div></div>
+<div><h3 class="eyebrow text-citron mb-5">Se rencontrer</h3><div class="space-y-3 text-xs"><a href="#atelier" class="block link-line w-fit">Notre histoire</a><a href="#visite" class="block link-line w-fit">L’atelier parisien</a><a href="mailto:bonjour@brindille-paris.fr" class="block link-line w-fit">Nous écrire</a></div></div>
+<div class="col-span-2 md:col-span-1"><h3 class="eyebrow text-citron mb-5">Une fleur vous attend.</h3><p class="text-xs leading-6 text-cream/70">24, rue de la Folie-Méricourt<br>Paris 11e</p><a href="#visite" class="inline-block mt-4 text-xs link-line">Passer nous voir <i class="fa-solid fa-arrow-right ml-3"></i></a></div>
+</div>
+<a href="#" aria-label="Retour en haut" class="block font-display text-[clamp(90px,20.2vw,310px)] leading-[1.15] tracking-[-.07em] pt-5 text-citron">brindille<span class="text-[.45em] align-top inline-block mt-[.15em]">✳</span></a>
+<div class="flex flex-col sm:flex-row justify-between gap-3 border-t border-cream/20 pt-6 text-[9px] text-cream/55 tracking-wider"><span>© 2026 BRINDILLE — ATELIER FLORAL PARISIEN</span><span>FAIT AVEC AMOUR. ET UN PEU DE TERRE.</span><a href="#" class="link-line w-fit">Retour au soleil ↑</a></div>
+</div>
+</footer>
+</div>
+</body>
+</html>
